@@ -62,10 +62,10 @@ namespace DialogueSystem
 
         private void OnButtonClick(string portName)
         {
-            DialogueSingleton.Instance.ChooseDialogue(portName);
-
             IsWaitingForButtonPress = false;
             while (_buttons.Count > 0) Destroy(_buttons.Dequeue());
+
+            DialogueSingleton.Instance.ChooseDialogue(portName);
         }
     }
 }

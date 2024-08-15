@@ -66,8 +66,8 @@ MonoBehaviour:
     values:
     - _fieldName: Input
       _node: {fileID: -3880960280228560908}
-      _typeQualifiedName: IncreaseRomance, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
+      _typeQualifiedName: DialogueSystem.IncreaseRomance, dialoguesystem.runtime,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: dynamicInput_0
         node: {fileID: 3474381778938216825}

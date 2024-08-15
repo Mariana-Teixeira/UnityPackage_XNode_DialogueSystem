@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace DialogueSystem
 {
-    [RequireComponent(typeof(TMP_Text))]
+    [RequireComponent(typeof(TextMeshProUGUI))]
     public class TextEffectController : MonoBehaviour
     {
         private Coroutine _effectCoroutine;

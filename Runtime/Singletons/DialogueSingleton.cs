@@ -80,8 +80,8 @@ namespace DialogueSystem
 
         public void Visit(LeafNode node)
         {
-            if (DisplaySingleton.Instance.IsSystemReady) EndDialogue?.Invoke();
             DisplaySingleton.Instance.SendLeaf(node);
+            if (DisplaySingleton.Instance.IsSystemReady) EndDialogue?.Invoke();
         }
     }
 }
