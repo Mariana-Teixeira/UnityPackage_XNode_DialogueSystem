@@ -1,0 +1,15 @@
+{
+    "name": "com.marianateixeira.dialoguesystem",
+    "version": "1.0.0",
+    "displayName": "Dialogue System",
+    "description": "Node based dialogue system built on the XNode framework for Unity.",
+    "unity": "2022.3",
+    "dependencies": {
+        "com.unity.textmeshpro": "3.0.6"
+    },
+    "author": {
+        "name": "Mariana Teixeira",
+        "email": "teixeira.marianareis@gmail.com",
+        "url": "https://www.mariana-teixeira.com"
+    }
+}
