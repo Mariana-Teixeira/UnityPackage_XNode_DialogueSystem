@@ -1,7 +1,9 @@
 # UnityPackage_DialogueSystem
 
-*Add Xnode to you Git dependency using the Unity Package Manager. Visit their Git Repository at https://github.com/Siccity/xNode.*
+*This package requires the user to add Xnode as a Git dependency using the Unity Package Manager.
+Visit their Git Repository at https://github.com/Siccity/xNode.*
 
+## Instructions
 This package includes scripts for dialogue text and a button spawner. 
 They also include example scripts to quickly test if Dialogue is running as intender.
 
