@@ -10,7 +10,7 @@ They also include example scripts to quickly test if Dialogue is running as inte
 1. Attach the 'TextEffectController.cs' to a Canvas GameObject. The script will attach a TextMeshPro to the GameObject.
 2. Attach the 'ButtonController.cs' to a Canvas GameObject. The script will attach a VerticalGroupLayout to the GameObject.
 3. Attach the 'Player.cs' and 'Speaker.cs' to other GameObjects. 
-    - Player is an examples script which reads input.
-    - Speaker is an example script which stores a 'DialogueTree': right click the Unity Project Window and choose Create -> DialogueTree.
+    - Player is an example script for reading input.
+    - Speaker is an example script for storing a 'DialogueTree': right click the Unity Project Window and choose Create -> DialogueTree.
 
 Currently, I'd like to expand on this package by improving the **efficiency of the typewritter effect function**. I will also add more dialogue events to replace dialogue systems from older projects.
