@@ -1,22 +1,10 @@
-using XNode;
-
 namespace DialogueSystem
 {
     [CreateNodeMenu("Node/Root")]
-    public class RootNode : BaseNode, INodeVisitable
+    public class RootNode : BaseNode
     {
-        [Output(connectionType = ConnectionType.Override)]
-        public byte Output;
-
-        public override object GetValue(NodePort port)
-        {
-            return null;
-        }
-
-        public override void OnCreateConnection(NodePort from, NodePort to)
-        {
-            base.OnCreateConnection(from, to);
-        }
+        [Output(connectionType = ConnectionType.Override, typeConstraint = TypeConstraint.Inherited)]
+        public BaseNode Output;
 
         public override void Accept(INodeVisitor visitor)
         {

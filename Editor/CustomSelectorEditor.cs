@@ -9,15 +9,18 @@ namespace DialogueSystem
     {
         private SelectorNode _node;
 
-        public override void OnBodyGUI()
+        public override void OnCreate()
         {
             _node = target as SelectorNode;
+        }
 
+        public override void OnBodyGUI()
+        {
             NodeEditorGUILayout.PropertyField(serializedObject.FindProperty("Input"));
 
             if (GUILayout.Button("Add Port"))
             {
-                _node.AddDynamicOutput(typeof(byte), Node.ConnectionType.Override);
+                _node.AddDynamicOutput(typeof(BaseNode), Node.ConnectionType.Override, Node.TypeConstraint.Inherited);
                 _node.Choices.Add(string.Empty);
             }
 

@@ -12,7 +12,7 @@ public class Speaker : MonoBehaviour
     private void OnEnable()
     {
         DialogueSingleton.Instance.EndDialogue = () => _state = SpeakerState.Unavailable;
-        EventSingleton<IncreaseRomance>.Instance.CallEvent = (e) => Debug.Log($"{e.CharacterName}: {e.RomanceToAdd}");
+        EventSingleton<AddValueEvent>.Instance.CallEvent = (e) => Debug.Log($"{e.Value}: {e.ValueToAdd}");
     }
 
     public void OnSpeak()

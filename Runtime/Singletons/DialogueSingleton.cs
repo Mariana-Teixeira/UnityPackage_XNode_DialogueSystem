@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 
 namespace DialogueSystem
 {
@@ -14,7 +15,9 @@ namespace DialogueSystem
             }
         }
 
+        // TODO: Move these constants global to the project.
         private const string OUTPUTNAME = "Output";
+        private const string EVENTINPUT = "EventInput";
 
         public Action<DialogueGraph> StartDialogue;
         public Action ContinueDialogue;
@@ -62,15 +65,12 @@ namespace DialogueSystem
 
         public void Visit(DialogueNode node)
         {
-            if (DisplaySingleton.Instance.IsSystemReady) _dialogueGraph.SetNextNode(OUTPUTNAME);
+            if (DisplaySingleton.Instance.IsSystemReady)
+            {
+                foreach (var e in node.GetInputPort(EVENTINPUT).GetInputValues<BaseEvent>()) e.ExecuteEvent();
+                _dialogueGraph.SetNextNode(OUTPUTNAME);
+            }
             DisplaySingleton.Instance.SendDialogue(node);
-        }
-
-        public void Visit(EventNode node)
-        {
-            foreach (var e in node.Events) e.ExecuteEvent();
-            _dialogueGraph.SetNextNode(OUTPUTNAME);
-            _dialogueGraph.CurrentNode.Accept(this);
         }
 
         public void Visit(SelectorNode node)

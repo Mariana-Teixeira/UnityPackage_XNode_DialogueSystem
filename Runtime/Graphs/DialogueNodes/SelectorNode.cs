@@ -4,10 +4,10 @@ using XNode;
 namespace DialogueSystem
 {
     [CreateNodeMenu("Node/Selector")]
-    public class SelectorNode : BaseNode, INodeVisitable
+    public class SelectorNode : BaseNode
     {
-        [Input]
-        public byte Input;
+        [Input(connectionType = ConnectionType.Multiple)]
+        public BaseNode Input;
 
         public List<string > Choices = new List<string>();
 

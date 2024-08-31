@@ -3,15 +3,10 @@ using XNode;
 namespace DialogueSystem
 {
     [CreateNodeMenu("Node/Leaf")]
-    public class LeafNode : BaseNode, INodeVisitable
+    public class LeafNode : BaseNode
     {
         [Input(connectionType = ConnectionType.Multiple)]
-        public byte Input;
-
-        public override object GetValue(NodePort port)
-        {
-            return null;
-        }
+        public BaseNode Input;
 
         public override void Accept(INodeVisitor visitor)
         {
