@@ -2,8 +2,21 @@ using XNode;
 
 namespace DialogueSystem
 {
-    public abstract class BaseNode : Node, INodeVisitable
+    public interface INodeVisitor
     {
-        public abstract void Accept(INodeVisitor visitor);
+        public void Visit(DialogueNode node);
+        public void Visit(SelectorNode node);
+        public void Visit(LeafNode node);
+    }
+
+    public interface INodeVisitable
+    {
+        public void Accept(INodeVisitor visitor);
+    }
+
+    public abstract class BaseNode : Node
+    {
+        public virtual void Accept(INodeVisitor visitor) { }
+        public override object GetValue(NodePort port) { return null; }
     }
 }

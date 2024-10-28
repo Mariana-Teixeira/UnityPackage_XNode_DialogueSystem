@@ -11,15 +11,7 @@ namespace DialogueSystem
 
         public List<string > Choices = new List<string>();
 
-        public override object GetValue(NodePort port)
-        {
-            return null;
-        }
+        public override void Accept(INodeVisitor visitor) => visitor.Visit(this);
 
-
-        public override void Accept(INodeVisitor visitor)
-        {
-            visitor.Visit(this);
-        }
     }
 }

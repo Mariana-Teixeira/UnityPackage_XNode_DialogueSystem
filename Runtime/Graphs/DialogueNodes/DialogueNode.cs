@@ -13,9 +13,6 @@ namespace DialogueSystem
 
         public string Dialogue;
 
-        public override void Accept(INodeVisitor visitor)
-        {
-            visitor.Visit(this);
-        }
+        public override void Accept(INodeVisitor visitor) => visitor.Visit(this);
     }
 }

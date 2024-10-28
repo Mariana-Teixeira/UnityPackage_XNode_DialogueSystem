@@ -1,34 +1,38 @@
-using UnityEngine;
 using DialogueSystem;
+using PlasticGui.PreferencesWindow;
+using System;
+using UnityEngine;
 
 public class Speaker : MonoBehaviour
 {
     [SerializeField]
-    DialogueGraph _dialogueGraph;
+    private DialogueGraph m_dialogueGraph;
 
-    private enum SpeakerState { Available, Talking, Unavailable };
-    private SpeakerState _state = SpeakerState.Available;
+    private DialogueManager m_dialogueManager;
 
-    private void OnEnable()
+    public DialogueGraph DialogueGraph
     {
-        DialogueSingleton.Instance.EndDialogue = () => _state = SpeakerState.Unavailable;
-        EventSingleton<AddValueEvent>.Instance.CallEvent = (e) => Debug.Log($"{e.Value}: {e.ValueToAdd}");
+        get
+        {
+            return m_dialogueGraph;
+        }
     }
 
-    public void OnSpeak()
+    private void Awake()
     {
-        switch (_state)
+        m_dialogueManager = FindAnyObjectByType<DialogueManager>();
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
         {
-            case SpeakerState.Available:
-                DialogueSingleton.Instance.StartDialogue.Invoke(_dialogueGraph);
-                _state = SpeakerState.Talking;
-                break;
-            case SpeakerState.Talking:
-                DialogueSingleton.Instance.ContinueDialogue.Invoke();
-                break;
-            case SpeakerState.Unavailable:
-                Debug.Log("Won't speak to you.");
-                break;
+            m_dialogueManager.OnSetGraph(m_dialogueGraph);
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            m_dialogueManager.Click();
         }
     }
 }

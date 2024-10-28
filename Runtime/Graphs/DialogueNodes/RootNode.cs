@@ -5,10 +5,5 @@ namespace DialogueSystem
     {
         [Output(connectionType = ConnectionType.Override, typeConstraint = TypeConstraint.Inherited)]
         public BaseNode Output;
-
-        public override void Accept(INodeVisitor visitor)
-        {
-            visitor.Visit(this);
-        }
     }
 }

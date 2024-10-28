@@ -8,9 +8,6 @@ namespace DialogueSystem
         [Input(connectionType = ConnectionType.Multiple)]
         public BaseNode Input;
 
-        public override void Accept(INodeVisitor visitor)
-        {
-            visitor.Visit(this);
-        }
+        public override void Accept(INodeVisitor visitor) => visitor.Visit(this);
     }
 }

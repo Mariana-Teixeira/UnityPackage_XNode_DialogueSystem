@@ -1,68 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7397623690066301081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3a75cedc0ecd2a489fa01715731bd1d, type: 3}
-  m_Name: Leaf
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 1615.1962, y: 223.21552}
-  ports:
-    keys:
-    - Input
-    values:
-    - _fieldName: Input
-      _node: {fileID: -7397623690066301081}
-      _typeQualifiedName: DialogueSystem.BaseNode, dialoguesystem.runtime, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: dynamicInput_0
-        node: {fileID: 8862187165106148027}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  Input: {fileID: 0}
---- !u!114 &-7016028522539960055
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71b3c4c31368ad54b897c5d64665e95b, type: 3}
-  m_Name: Root
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 414.33453, y: 126.65795}
-  ports:
-    keys:
-    - Output
-    values:
-    - _fieldName: Output
-      _node: {fileID: -7016028522539960055}
-      _typeQualifiedName: DialogueSystem.BaseNode, dialoguesystem.runtime, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: Input
-        node: {fileID: 5563011871830438069}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 1
-      _typeConstraint: 1
-      _dynamic: 0
-  Output: {fileID: 0}
---- !u!114 &-6369829883347803524
+--- !u!114 &-8570952875703541457
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -72,30 +10,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 246eac2aacf033142a84b44c436748e5, type: 3}
-  m_Name: Add Value Event
+  m_Name: Sound Event
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 664, y: -216}
+  position: {x: -152, y: -216}
   ports:
     keys:
     - Output
     values:
     - _fieldName: Output
-      _node: {fileID: -6369829883347803524}
+      _node: {fileID: -8570952875703541457}
       _typeQualifiedName: DialogueSystem.BaseEvent, dialoguesystem.runtime, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: EventInput
-        node: {fileID: -2069011374694515393}
+        node: {fileID: -1339765527524363737}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 1
       _dynamic: 0
   Output: {fileID: 0}
-  Value: dhfgh
-  ValueToAdd: 3
---- !u!114 &-2069011374694515393
+  Value: path/sound
+--- !u!114 &-8304404319008258147
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,7 +45,7 @@ MonoBehaviour:
   m_Name: Dialogue
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1016, y: 120}
+  position: {x: 816.1901, y: 396.59}
   ports:
     keys:
     - EventInput
@@ -116,39 +53,33 @@ MonoBehaviour:
     - Output
     values:
     - _fieldName: EventInput
-      _node: {fileID: -2069011374694515393}
+      _node: {fileID: -8304404319008258147}
       _typeQualifiedName: DialogueSystem.BaseEvent, dialoguesystem.runtime, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: Output
-        node: {fileID: 5777529050751329003}
-        reroutePoints: []
-      - fieldName: Output
-        node: {fileID: -6369829883347803524}
-        reroutePoints: []
+      connections: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
     - _fieldName: Input
-      _node: {fileID: -2069011374694515393}
+      _node: {fileID: -8304404319008258147}
       _typeQualifiedName: DialogueSystem.BaseNode, dialoguesystem.runtime, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections:
-      - fieldName: Output
-        node: {fileID: 5563011871830438069}
+      - fieldName: dynamicInput_1
+        node: {fileID: 4576030948295306396}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
     - _fieldName: Output
-      _node: {fileID: -2069011374694515393}
+      _node: {fileID: -8304404319008258147}
       _typeQualifiedName: DialogueSystem.BaseNode, dialoguesystem.runtime, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: Input
-        node: {fileID: 8862187165106148027}
+        node: {fileID: 7225699890977174381}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -157,8 +88,8 @@ MonoBehaviour:
   EventInput: {fileID: 0}
   Input: {fileID: 0}
   Output: {fileID: 0}
-  Dialogue: addghdhd
---- !u!114 &-1210919121052407842
+  Dialogue: This is dialogue 4.
+--- !u!114 &-7206704905128665585
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -171,24 +102,84 @@ MonoBehaviour:
   m_Name: Leaf
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1916.5962, y: 482.81552}
+  position: {x: 1104.1702, y: 238.07999}
   ports:
     keys:
     - Input
     values:
     - _fieldName: Input
-      _node: {fileID: -1210919121052407842}
+      _node: {fileID: -7206704905128665585}
       _typeQualifiedName: DialogueSystem.BaseNode, dialoguesystem.runtime, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: Output
-        node: {fileID: 5798540917688195637}
+        node: {fileID: 4926431102195269286}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
   Input: {fileID: 0}
+--- !u!114 &-1339765527524363737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9b2c7fc51118ac438f39731451ce49c, type: 3}
+  m_Name: Dialogue
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 198.5, y: 50.5}
+  ports:
+    keys:
+    - EventInput
+    - Input
+    - Output
+    values:
+    - _fieldName: EventInput
+      _node: {fileID: -1339765527524363737}
+      _typeQualifiedName: DialogueSystem.BaseEvent, dialoguesystem.runtime, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Output
+        node: {fileID: -8570952875703541457}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Input
+      _node: {fileID: -1339765527524363737}
+      _typeQualifiedName: DialogueSystem.BaseNode, dialoguesystem.runtime, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Output
+        node: {fileID: 3403092470842341305}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Output
+      _node: {fileID: -1339765527524363737}
+      _typeQualifiedName: DialogueSystem.BaseNode, dialoguesystem.runtime, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Input
+        node: {fileID: 4576030948295306396}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 1
+      _dynamic: 0
+  EventInput: {fileID: 0}
+  Input: {fileID: 0}
+  Output: {fileID: 0}
+  Dialogue: This is dialogue 2.
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,16 +193,47 @@ MonoBehaviour:
   m_Name: Dialogue Tree
   m_EditorClassIdentifier: 
   nodes:
-  - {fileID: -7016028522539960055}
-  - {fileID: 5563011871830438069}
-  - {fileID: -2069011374694515393}
-  - {fileID: 5777529050751329003}
-  - {fileID: -6369829883347803524}
-  - {fileID: 8862187165106148027}
-  - {fileID: -7397623690066301081}
-  - {fileID: 5798540917688195637}
-  - {fileID: -1210919121052407842}
---- !u!114 &5563011871830438069
+  - {fileID: 2652375286165011590}
+  - {fileID: 3403092470842341305}
+  - {fileID: -1339765527524363737}
+  - {fileID: 4576030948295306396}
+  - {fileID: 4926431102195269286}
+  - {fileID: -7206704905128665585}
+  - {fileID: -8304404319008258147}
+  - {fileID: 7225699890977174381}
+  - {fileID: -8570952875703541457}
+--- !u!114 &2652375286165011590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71b3c4c31368ad54b897c5d64665e95b, type: 3}
+  m_Name: Root
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -392, y: -88}
+  ports:
+    keys:
+    - Output
+    values:
+    - _fieldName: Output
+      _node: {fileID: 2652375286165011590}
+      _typeQualifiedName: DialogueSystem.BaseNode, dialoguesystem.runtime, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Input
+        node: {fileID: 3403092470842341305}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 1
+      _dynamic: 0
+  Output: {fileID: 0}
+--- !u!114 &3403092470842341305
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -224,7 +246,7 @@ MonoBehaviour:
   m_Name: Dialogue
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 668.79517, y: 115.38438}
+  position: {x: -152, y: -72}
   ports:
     keys:
     - EventInput
@@ -232,7 +254,7 @@ MonoBehaviour:
     - Output
     values:
     - _fieldName: EventInput
-      _node: {fileID: 5563011871830438069}
+      _node: {fileID: 3403092470842341305}
       _typeQualifiedName: DialogueSystem.BaseEvent, dialoguesystem.runtime, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections: []
@@ -241,24 +263,24 @@ MonoBehaviour:
       _typeConstraint: 0
       _dynamic: 0
     - _fieldName: Input
-      _node: {fileID: 5563011871830438069}
+      _node: {fileID: 3403092470842341305}
       _typeQualifiedName: DialogueSystem.BaseNode, dialoguesystem.runtime, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: Output
-        node: {fileID: -7016028522539960055}
+        node: {fileID: 2652375286165011590}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
     - _fieldName: Output
-      _node: {fileID: 5563011871830438069}
+      _node: {fileID: 3403092470842341305}
       _typeQualifiedName: DialogueSystem.BaseNode, dialoguesystem.runtime, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: Input
-        node: {fileID: -2069011374694515393}
+        node: {fileID: -1339765527524363737}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -267,98 +289,8 @@ MonoBehaviour:
   EventInput: {fileID: 0}
   Input: {fileID: 0}
   Output: {fileID: 0}
-  Dialogue: 123455
---- !u!114 &5777529050751329003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 246eac2aacf033142a84b44c436748e5, type: 3}
-  m_Name: Add Value Event
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 664, y: -56}
-  ports:
-    keys:
-    - Output
-    values:
-    - _fieldName: Output
-      _node: {fileID: 5777529050751329003}
-      _typeQualifiedName: DialogueSystem.BaseEvent, dialoguesystem.runtime, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: EventInput
-        node: {fileID: -2069011374694515393}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 1
-      _dynamic: 0
-  Output: {fileID: 0}
-  Value: qweqr
-  ValueToAdd: 5555
---- !u!114 &5798540917688195637
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9b2c7fc51118ac438f39731451ce49c, type: 3}
-  m_Name: Dialogue
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 1637.1962, y: 419.0155}
-  ports:
-    keys:
-    - EventInput
-    - Input
-    - Output
-    values:
-    - _fieldName: EventInput
-      _node: {fileID: 5798540917688195637}
-      _typeQualifiedName: DialogueSystem.BaseEvent, dialoguesystem.runtime, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: Input
-      _node: {fileID: 5798540917688195637}
-      _typeQualifiedName: DialogueSystem.BaseNode, dialoguesystem.runtime, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: dynamicInput_1
-        node: {fileID: 8862187165106148027}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: Output
-      _node: {fileID: 5798540917688195637}
-      _typeQualifiedName: DialogueSystem.BaseNode, dialoguesystem.runtime, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      connections:
-      - fieldName: Input
-        node: {fileID: -1210919121052407842}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 1
-      _typeConstraint: 1
-      _dynamic: 0
-  EventInput: {fileID: 0}
-  Input: {fileID: 0}
-  Output: {fileID: 0}
-  Dialogue: ahrth
---- !u!114 &8862187165106148027
+  Dialogue: This is dialogue 1.
+--- !u!114 &4576030948295306396
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -371,7 +303,7 @@ MonoBehaviour:
   m_Name: Selector
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1322.5961, y: 192.41551}
+  position: {x: 548.7801, y: 196.93999}
   ports:
     keys:
     - Input
@@ -379,36 +311,36 @@ MonoBehaviour:
     - dynamicInput_1
     values:
     - _fieldName: Input
-      _node: {fileID: 8862187165106148027}
+      _node: {fileID: 4576030948295306396}
       _typeQualifiedName: DialogueSystem.BaseNode, dialoguesystem.runtime, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: Output
-        node: {fileID: -2069011374694515393}
+        node: {fileID: -1339765527524363737}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
     - _fieldName: dynamicInput_0
-      _node: {fileID: 8862187165106148027}
+      _node: {fileID: 4576030948295306396}
       _typeQualifiedName: DialogueSystem.BaseNode, dialoguesystem.runtime, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: Input
-        node: {fileID: -7397623690066301081}
+        node: {fileID: 4926431102195269286}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
       _typeConstraint: 1
       _dynamic: 1
     - _fieldName: dynamicInput_1
-      _node: {fileID: 8862187165106148027}
+      _node: {fileID: 4576030948295306396}
       _typeQualifiedName: DialogueSystem.BaseNode, dialoguesystem.runtime, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
       connections:
       - fieldName: Input
-        node: {fileID: 5798540917688195637}
+        node: {fileID: -8304404319008258147}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
@@ -416,5 +348,93 @@ MonoBehaviour:
       _dynamic: 1
   Input: {fileID: 0}
   Choices:
-  - 1
-  - 2
+  - This is choice 1.
+  - This is choice 2.
+--- !u!114 &4926431102195269286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9b2c7fc51118ac438f39731451ce49c, type: 3}
+  m_Name: Dialogue
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 840, y: 152}
+  ports:
+    keys:
+    - EventInput
+    - Input
+    - Output
+    values:
+    - _fieldName: EventInput
+      _node: {fileID: 4926431102195269286}
+      _typeQualifiedName: DialogueSystem.BaseEvent, dialoguesystem.runtime, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Input
+      _node: {fileID: 4926431102195269286}
+      _typeQualifiedName: DialogueSystem.BaseNode, dialoguesystem.runtime, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: dynamicInput_0
+        node: {fileID: 4576030948295306396}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: Output
+      _node: {fileID: 4926431102195269286}
+      _typeQualifiedName: DialogueSystem.BaseNode, dialoguesystem.runtime, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Input
+        node: {fileID: -7206704905128665585}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 1
+      _dynamic: 0
+  EventInput: {fileID: 0}
+  Input: {fileID: 0}
+  Output: {fileID: 0}
+  Dialogue: This is dialogue 3.
+--- !u!114 &7225699890977174381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a75cedc0ecd2a489fa01715731bd1d, type: 3}
+  m_Name: Leaf
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 1112, y: 424}
+  ports:
+    keys:
+    - Input
+    values:
+    - _fieldName: Input
+      _node: {fileID: 7225699890977174381}
+      _typeQualifiedName: DialogueSystem.BaseNode, dialoguesystem.runtime, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: Output
+        node: {fileID: -8304404319008258147}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  Input: {fileID: 0}

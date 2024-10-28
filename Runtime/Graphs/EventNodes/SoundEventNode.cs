@@ -2,19 +2,19 @@ using XNode;
 
 namespace DialogueSystem
 {
-    [CreateNodeMenu("Event/Add Value")]
-    public class AddValueEvent : BaseEvent
+    [CreateNodeMenu("Event/Play Sound")]
+    public class SoundEventNode : BaseEvent
     {
         [Output(connectionType = ConnectionType.Multiple, typeConstraint = TypeConstraint.Inherited)]
         public BaseEvent Output;
 
         public string Value;
-        public float ValueToAdd;
 
         public override void ExecuteEvent()
         {
-            EventSingleton<AddValueEvent>.Instance.CallEvent(this);
+            EventBus<SoundEventNode>.Raise(this);
         }
+
         public override object GetValue(NodePort port)
         {
             return this;
