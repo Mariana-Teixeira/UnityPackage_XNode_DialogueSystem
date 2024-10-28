@@ -1,10 +1,8 @@
 using System;
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace DialogueSystem
 {
-    #region State Machine Logic
     public abstract class BaseState
     {
         public virtual void OnEnter() { }
@@ -111,90 +109,6 @@ namespace DialogueSystem
             }
 
             return node;
-        }
-    }
-    #endregion
-
-    public class DialogueStateMachine : StateMachine<BaseDialogueState>
-    {
-        public void Click()
-        {
-            m_current.State.Click();
-        }
-    }
-
-    public abstract class BaseDialogueState : BaseState
-    {
-        public DialogueManager m_dialogueManager;
-        public BaseDialogueState(DialogueManager dialogueManager)
-        {
-            m_dialogueManager = dialogueManager;
-        }
-        public virtual void Click() { }
-    }
-
-    public class EntryState : BaseDialogueState
-    {
-        public EntryState(DialogueManager dialogueManager) : base(dialogueManager)
-        {
-        }
-    }
-
-    public class CharacterTalking : BaseDialogueState
-    {
-        public CharacterTalking(DialogueManager dialogueManager) : base(dialogueManager)
-        {
-        }
-
-        public override void OnEnter()
-        {
-            m_dialogueManager.StartTypewritterEffect();
-            m_dialogueManager.ExecuteEvents();
-        }
-
-        public override void Click()
-        {
-            m_dialogueManager.StopTypewritterEffect();
-        }
-    }
-
-    public class CharacterPausing : BaseDialogueState
-    {
-        public bool Clicked;
-        public CharacterPausing(DialogueManager dialogueManager) : base(dialogueManager)
-        {
-        }
-
-        public override void OnEnter()
-        {
-            m_dialogueManager.UpdateNextNode();
-        }
-
-        public override void Click() => Clicked = true;
-        public override void OnExit() => Clicked = false;
-    }
-
-    public class WaitingForPlayer : BaseDialogueState
-    {
-        public WaitingForPlayer(DialogueManager dialogueManager) : base(dialogueManager)
-        {
-        }
-
-        public override void OnEnter()
-        {
-            m_dialogueManager.CreateChoiceButtons();
-        }
-    }
-
-    public class ExitState : BaseDialogueState
-    {
-        public ExitState(DialogueManager dialogueManager) : base(dialogueManager)
-        {
-        }
-
-        public override void OnEnter()
-        {
-            m_dialogueManager.EndConversation();
         }
     }
 }

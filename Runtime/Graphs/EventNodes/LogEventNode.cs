@@ -3,7 +3,7 @@ using XNode;
 namespace DialogueSystem
 {
     [CreateNodeMenu("Event/Play Sound")]
-    public class SoundEventNode : BaseEvent
+    public class LogEventNode : BaseEvent
     {
         [Output(connectionType = ConnectionType.Multiple, typeConstraint = TypeConstraint.Inherited)]
         public BaseEvent Output;
@@ -12,7 +12,7 @@ namespace DialogueSystem
 
         public override void ExecuteEvent()
         {
-            EventBus<SoundEventNode>.Raise(this);
+            EventBus<LogEventNode>.Raise(this);
         }
 
         public override object GetValue(NodePort port)

@@ -4,14 +4,14 @@ using XNodeEditor;
 
 namespace DialogueSystem
 {
-    [CustomNodeEditor(typeof(SoundEventNode))]
+    [CustomNodeEditor(typeof(LogEventNode))]
     public class CustomSoundEventNodeEditor : NodeEditor
     {
-        private SoundEventNode _node;
+        private LogEventNode _node;
 
         public override void OnCreate()
         {
-            _node = target as SoundEventNode;
+            _node = target as LogEventNode;
         }
 
         public override void OnBodyGUI()
