@@ -4,13 +4,10 @@
 Visit their Git Repository at https://github.com/Siccity/xNode.*
 
 ## Instructions
-This package includes scripts for dialogue text and a button spawner. 
-They also include example scripts to quickly test if Dialogue is running as intender.
+Create a DialogueTree through the context menu, by right-clicking the navigation folder.
+1. Attach the 'DialogueManager.cs' to any GameObject and add a *HorizontalOrVerticalLayoutGroup*, an *ObjectPrefab* and a *TMP_Text*.
+2. Attach the 'Speaker.cs' to another GameObject and add a *DialogueTree*.
+    - Press 'Space' to load the *DialogueTree*.
+    - Press 'Click' to iterate through the *DialogueTree*.
 
-1. Attach the 'TextEffectController.cs' to a Canvas GameObject. The script will attach a TextMeshPro to the GameObject.
-2. Attach the 'ButtonController.cs' to a Canvas GameObject. The script will attach a VerticalGroupLayout to the GameObject.
-3. Attach the 'Player.cs' and 'Speaker.cs' to other GameObjects. 
-    - Player is an example script for reading input.
-    - Speaker is an example script for storing a 'DialogueTree': right click the Unity Project Window and choose Create -> DialogueTree.
-
-Currently, I'd like to expand on this package by improving the **efficiency of the typewritter effect function**. I will also add more dialogue events to replace dialogue systems from older projects.
+Iterating before loading the dialogue tree will throw errors!
