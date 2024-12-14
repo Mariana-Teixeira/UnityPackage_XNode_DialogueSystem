@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "displayName": "Dialogue System",
     "description": "Node based dialogue system built on the XNode framework for Unity.",
-    "unity": "6000.0.10f1",
+    "unity": "6000.0",
     "dependencies": {
         "com.unity.ugui": "2.0.0"
     },
