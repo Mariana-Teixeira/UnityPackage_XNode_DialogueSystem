@@ -3,9 +3,9 @@
     "version": "1.0.0",
     "displayName": "Dialogue System",
     "description": "Node based dialogue system built on the XNode framework for Unity.",
-    "unity": "2022.3",
+    "unity": "6000.0.10f1",
     "dependencies": {
-        "com.unity.textmeshpro": "3.0.6"
+        "com.unity.ugui": "2.0.0"
     },
     "author": {
         "name": "Mariana Teixeira",
