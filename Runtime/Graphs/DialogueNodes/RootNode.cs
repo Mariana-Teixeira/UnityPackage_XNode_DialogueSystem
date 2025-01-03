@@ -1,4 +1,4 @@
-namespace DialogueSystem
+namespace DialogueSystem.Nodes
 {
     [CreateNodeMenu("Node/Root")]
     public class RootNode : BaseNode

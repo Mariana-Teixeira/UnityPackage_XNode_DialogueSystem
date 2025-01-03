@@ -1,4 +1,6 @@
-namespace DialogueSystem
+using DialogueSystem.Events;
+
+namespace DialogueSystem.Nodes
 {
     [CreateNodeMenu("Node/Dialogue")]
     public class DialogueNode : BaseNode

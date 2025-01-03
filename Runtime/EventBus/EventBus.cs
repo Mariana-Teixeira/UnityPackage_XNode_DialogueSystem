@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace DialogueSystem
+namespace DialogueSystem.Events
 {
     public static class EventBus<T> where T : IEvent
     {

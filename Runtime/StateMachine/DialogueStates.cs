@@ -1,6 +1,4 @@
-using System.Diagnostics;
-
-namespace DialogueSystem
+namespace DialogueSystem.States
 {
     public class DialogueStateMachine : StateMachine<BaseDialogueState>
     {

@@ -1,6 +1,6 @@
 using System;
 
-namespace DialogueSystem
+namespace DialogueSystem.Events
 {
     public interface IEvent { }
 

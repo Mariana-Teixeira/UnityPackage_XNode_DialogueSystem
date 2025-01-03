@@ -1,7 +1,6 @@
 using System.Collections.Generic;
-using XNode;
 
-namespace DialogueSystem
+namespace DialogueSystem.Nodes
 {
     [CreateNodeMenu("Node/Selector")]
     public class SelectorNode : BaseNode

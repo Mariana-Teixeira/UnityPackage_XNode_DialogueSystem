@@ -1,3 +1,4 @@
+using DialogueSystem.Nodes;
 using UnityEngine;
 using XNode;
 using XNodeEditor;

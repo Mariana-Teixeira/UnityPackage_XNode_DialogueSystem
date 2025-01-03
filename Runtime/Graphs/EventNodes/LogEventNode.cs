@@ -1,6 +1,6 @@
 using XNode;
 
-namespace DialogueSystem
+namespace DialogueSystem.Events
 {
     [CreateNodeMenu("Event/Play Sound")]
     public class LogEventNode : BaseEvent

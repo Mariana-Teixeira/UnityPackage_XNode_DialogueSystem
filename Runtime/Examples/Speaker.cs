@@ -28,7 +28,7 @@ public class Speaker : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             if (m_dialogueManager.IsRunning) m_dialogueManager.Click();
-            else m_dialogueManager.OnSetGraph(m_dialogueGraph);
+            else m_dialogueManager.SetGraph(m_dialogueGraph);
         }
     }
 }

@@ -1,6 +1,6 @@
 using XNode;
 
-namespace DialogueSystem
+namespace DialogueSystem.Events
 {
     public abstract class BaseEvent : Node, IEvent
     {

@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace DialogueSystem
+namespace DialogueSystem.States
 {
     public abstract class BaseState
     {

@@ -2,7 +2,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-namespace DialogueSystem
+namespace DialogueSystem.Interface
 {
     public class TypewritterText
     {

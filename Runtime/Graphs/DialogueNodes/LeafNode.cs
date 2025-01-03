@@ -1,6 +1,6 @@
 using XNode;
 
-namespace DialogueSystem
+namespace DialogueSystem.Nodes
 {
     [CreateNodeMenu("Node/Leaf")]
     public class LeafNode : BaseNode

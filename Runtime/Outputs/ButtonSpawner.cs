@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace DialogueSystem
+namespace DialogueSystem.Interface
 {
     // TODO: Better to show and hide the buttons than to instantiate and destroy them.
     public class ButtonSpawner

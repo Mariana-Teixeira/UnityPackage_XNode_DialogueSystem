@@ -1,5 +1,9 @@
 using System;
 using System.Collections.Generic;
+using DialogueSystem.Events;
+using DialogueSystem.Interface;
+using DialogueSystem.Nodes;
+using DialogueSystem.States;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,7 +29,7 @@ namespace DialogueSystem
         private Type m_currentType;
 
         private ButtonSpawner m_buttonSpawner;
-        public TypewritterText m_typewriter;
+        private TypewritterText m_typewriter;
         private Coroutine m_coroutine;
 
         private DialogueStateMachine m_stateMachine;
@@ -70,14 +74,14 @@ namespace DialogueSystem
 
         public void Click()
         {
-            m_stateMachine.Click();
+            if (!IsRunning) StartConversation();
+            else m_stateMachine.Click();
         }
 
-        public void OnSetGraph(DialogueGraph graph)
+        public void SetGraph(DialogueGraph graph)
         {
             m_graph = graph;
             m_graph.GetRootNode();
-            StartConversation();
         }
 
         private void StartConversation()

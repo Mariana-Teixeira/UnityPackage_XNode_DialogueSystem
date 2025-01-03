@@ -1,3 +1,4 @@
+using DialogueSystem.Events;
 using UnityEngine;
 
 namespace DialogueSystem
