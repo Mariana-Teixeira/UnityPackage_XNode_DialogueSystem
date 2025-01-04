@@ -2,9 +2,9 @@ using System.Collections.Generic;
 
 namespace DialogueSystem.Events
 {
-    public static class EventBus<T> where T : IEvent
+    internal static class EventBus<T> where T : IEvent
     {
-        public static readonly HashSet<IEventBinding<T>> bindings = new HashSet<IEventBinding<T>>();
+        private static readonly HashSet<IEventBinding<T>> bindings = new();
 
         public static void Register(EventBinding<T> binding) => bindings.Add(binding);
         public static void Deregister(EventBinding<T> binding) => bindings.Remove(binding);

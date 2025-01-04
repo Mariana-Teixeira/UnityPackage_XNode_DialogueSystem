@@ -11,7 +11,7 @@ namespace DialogueSystem.Events
 
     public class EventBinding<T> : IEventBinding<T> where T : IEvent
     {
-        public Action<T> OnEvent = _ => { };
+        private Action<T> OnEvent = _ => { };
 
         Action<T> IEventBinding<T>.OnEvent
         {
