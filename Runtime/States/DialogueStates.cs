@@ -10,8 +10,9 @@ namespace DialogueSystem.States
 
     public abstract class BaseDialogueState : BaseState
     {
-        public DialogueManager m_dialogueManager;
-        public BaseDialogueState(DialogueManager dialogueManager)
+        protected readonly DialogueManager m_dialogueManager;
+
+        protected BaseDialogueState(DialogueManager dialogueManager)
         {
             m_dialogueManager = dialogueManager;
         }
@@ -21,15 +22,13 @@ namespace DialogueSystem.States
     public class EntryState : BaseDialogueState
     {
         public EntryState(DialogueManager dialogueManager) : base(dialogueManager)
-        {
-        }
+        { }
     }
 
     public class TypingLine : BaseDialogueState
     {
         public TypingLine(DialogueManager dialogueManager) : base(dialogueManager)
-        {
-        }
+        { }
 
         public override void OnEnter()
         {
@@ -44,8 +43,7 @@ namespace DialogueSystem.States
     {
         public bool CallNext;
         public CloseLine(DialogueManager dialogueManager) : base(dialogueManager)
-        {
-        }
+        { }
 
         public override void OnEnter() => m_dialogueManager.UpdateNextNode();
         public override void Click() => CallNext = true;
@@ -55,8 +53,7 @@ namespace DialogueSystem.States
     public class WaitingForPlayerChoice : BaseDialogueState
     {
         public WaitingForPlayerChoice(DialogueManager dialogueManager) : base(dialogueManager)
-        {
-        }
+        { }
 
         public override void OnEnter() => m_dialogueManager.CreateChoiceButtons();
     }
@@ -64,8 +61,7 @@ namespace DialogueSystem.States
     public class ExitState : BaseDialogueState
     {
         public ExitState(DialogueManager dialogueManager) : base(dialogueManager)
-        {
-        }
+        { }
 
         public override void OnEnter() => m_dialogueManager.EndConversation();
     }

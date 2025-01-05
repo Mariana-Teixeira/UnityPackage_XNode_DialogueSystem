@@ -71,11 +71,11 @@ namespace DialogueSystem
         {
             m_stateMachine.Update();
         }
-
-        public void Click()
+        
+        public void Click() 
         {
-            if (!IsRunning) StartConversation();
-            else m_stateMachine.Click();
+            if (IsRunning) m_stateMachine.Click();
+            else StartConversation();
         }
 
         public void SetGraph(DialogueGraph graph)
@@ -90,7 +90,7 @@ namespace DialogueSystem
             UpdateNextNode();
         }
 
-        public void EndConversation()
+        internal void EndConversation()
         {
             IsRunning = false;
             m_graph = null;

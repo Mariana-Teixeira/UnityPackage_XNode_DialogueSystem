@@ -8,13 +8,7 @@ namespace DialogueSystem
     public class DialogueGraph : NodeGraph
     {
         private BaseNode _currentNode;
-        public BaseNode CurrentNode
-        {
-            get
-            {
-                return _currentNode;
-            }
-        }
+        public BaseNode CurrentNode => _currentNode;
 
         public void GetRootNode()
         {
