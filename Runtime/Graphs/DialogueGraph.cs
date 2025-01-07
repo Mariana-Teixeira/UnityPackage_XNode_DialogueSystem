@@ -1,8 +1,7 @@
-using DialogueSystem.Nodes;
 using UnityEngine;
 using XNode;
 
-namespace DialogueSystem
+namespace DialogueSystem.Nodes
 {
     [CreateAssetMenu(fileName = "Dialogue Tree", menuName = "Dialogue Tree")]
     public class DialogueGraph : NodeGraph

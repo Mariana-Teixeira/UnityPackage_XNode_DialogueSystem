@@ -4,21 +4,24 @@ namespace DialogueSystem.Events
 {
     internal interface IEvent { }
 
-    internal interface IEventBinding<T>
+    internal class EventBinding<T> where T : IEvent
     {
-        public Action<T> OnEvent { get; set; }
-    }
-
-    internal class EventBinding<T> : IEventBinding<T> where T : IEvent
-    {
-        private Action<T> OnEvent = _ => { };
-
-        Action<T> IEventBinding<T>.OnEvent
+        private Action<T> _onEvent = _ => { };
+        private Action _onEventNoArgs = () => { };
+        
+        public Action<T> OnEvent
         {
-            get => OnEvent;
-            set => OnEvent = value;
+            get => _onEvent;
+            set => _onEvent = value;
         }
 
-        internal EventBinding(Action<T> onEvent) => OnEvent = onEvent;
+        public Action OnEventNoArgs
+        {
+            get => _onEventNoArgs;
+            set => _onEventNoArgs = value;
+        }
+        
+        internal EventBinding(Action<T> onEvent) => _onEvent = onEvent;
+        internal EventBinding(Action onEventNoArgs) => onEventNoArgs = _onEventNoArgs;
     }
 }
