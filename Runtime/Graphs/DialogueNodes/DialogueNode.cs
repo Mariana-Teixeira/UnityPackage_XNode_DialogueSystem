@@ -1,13 +1,14 @@
 using System.Collections;
 using DialogueSystem.Events;
+using UnityEngine.Serialization;
 
 namespace DialogueSystem.Nodes
 {
     [CreateNodeMenu("Node/Dialogue")]
     public class DialogueNode : BaseNode, IEnumerable
     {
-        [Input(connectionType = ConnectionType.Multiple)]
-        public BaseEvent EventInput;
+        [FormerlySerializedAs("EventInput")] [Input(connectionType = ConnectionType.Multiple)]
+        public BaseDialogueEvent dialogueEventInput;
 
         [Input(connectionType = ConnectionType.Multiple)]
         public BaseNode Input;

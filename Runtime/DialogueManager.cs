@@ -15,12 +15,12 @@ namespace DialogueSystem
         private Coroutine _coroutine;
         
         private string _dialogue;
-        private Queue<BaseEvent> _events;
+        private Queue<BaseDialogueEvent> _events;
         
         private void Awake()
         {
             _typewriter = new TypewritterText(_dialogueBox);
-            _events = new Queue<BaseEvent>();
+            _events = new Queue<BaseDialogueEvent>();
         }
 
         public override void EndConversation()
@@ -52,9 +52,9 @@ namespace DialogueSystem
             _typewriter.InstantDisplayEffect(_dialogue);
         }
         
-        private void SetEventQueue(BaseEvent[] events)
+        private void SetEventQueue(BaseDialogueEvent[] events)
         {
-            foreach (BaseEvent e in events)
+            foreach (BaseDialogueEvent e in events)
                 _events.Enqueue(e);
         }
 
@@ -62,7 +62,7 @@ namespace DialogueSystem
         {
             while(_events.Count > 0)
             {
-                BaseEvent e = _events.Dequeue();
+                BaseDialogueEvent e = _events.Dequeue();
                 e.ExecuteEvent();
             }
         }
@@ -72,7 +72,7 @@ namespace DialogueSystem
             _dialogue = node.Dialogue;
             StartTypewritterEffect();
             
-            var eventArray = node.GetInputPort(PORTNAMES.EVENTINPUT).GetInputValues<BaseEvent>();
+            var eventArray = node.GetInputPort(PORTNAMES.EVENTINPUT).GetInputValues<BaseDialogueEvent>();
             SetEventQueue(eventArray);
             ExecuteEvents();
         }

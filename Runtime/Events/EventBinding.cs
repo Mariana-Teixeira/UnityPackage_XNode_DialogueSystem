@@ -2,9 +2,9 @@ using System;
 
 namespace DialogueSystem.Events
 {
-    internal interface IEvent { }
+    public interface IDialogueEvent { }
 
-    internal class EventBinding<T> where T : IEvent
+    public class EventBinding<T> where T : IDialogueEvent
     {
         private Action<T> _onEvent = _ => { };
         private Action _onEventNoArgs = () => { };
@@ -21,7 +21,7 @@ namespace DialogueSystem.Events
             set => _onEventNoArgs = value;
         }
         
-        internal EventBinding(Action<T> onEvent) => _onEvent = onEvent;
-        internal EventBinding(Action onEventNoArgs) => onEventNoArgs = _onEventNoArgs;
+        public EventBinding(Action<T> onEvent) => _onEvent = onEvent;
+        public EventBinding(Action onEventNoArgs) => onEventNoArgs = _onEventNoArgs;
     }
 }
