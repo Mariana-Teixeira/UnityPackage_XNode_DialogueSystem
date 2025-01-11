@@ -1,14 +1,10 @@
-using System.Collections;
-using DialogueSystem.Events;
-using UnityEngine.Serialization;
-
 namespace DialogueSystem.Nodes
 {
     [CreateNodeMenu("Node/Dialogue")]
-    public class DialogueNode : BaseNode, IEnumerable
+    public class DialogueNode : BaseNode
     {
-        [FormerlySerializedAs("EventInput")] [Input(connectionType = ConnectionType.Multiple)]
-        public BaseDialogueEvent dialogueEventInput;
+        [Input(connectionType = ConnectionType.Multiple)]
+        public BaseDialogueEvent EventInput;
 
         [Input(connectionType = ConnectionType.Multiple)]
         public BaseNode Input;
@@ -18,9 +14,5 @@ namespace DialogueSystem.Nodes
         public string Dialogue;
 
         public override void Accept(INodeVisitor visitor) => visitor.Visit(this);
-        public IEnumerator GetEnumerator()
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }
